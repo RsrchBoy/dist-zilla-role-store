@@ -10,7 +10,7 @@ with 'Dist::Zilla::Role::Stash';
 
 has zilla => (
     is              => 'ro',
-    weaken          => 1,
+    weak_ref        => 1,
     init_arg        => '_zilla',
     isa_instance_of => 'Dist::Zilla::Builder',
 );
