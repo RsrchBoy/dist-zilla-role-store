@@ -4,7 +4,7 @@ Dist::Zilla::Role::Store - A dynamic stash^Wstore of common data
 
 # VERSION
 
-This document describes version 0.001 of Dist::Zilla::Role::Store - released April 25, 2014 as part of Dist-Zilla-Role-Store.
+This document describes version 0.000001 of Dist::Zilla::Role::Store - released April 25, 2014 as part of Dist-Zilla-Role-Store.
 
 # SYNOPSIS
 
