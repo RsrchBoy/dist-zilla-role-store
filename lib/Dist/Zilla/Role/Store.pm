@@ -11,6 +11,14 @@ with 'Dist::Zilla::Role::Stash' => {
     -alias    => { register_component => '_stash_register_component' },
 };
 
+=attr zilla
+
+A read-only attribute storing a reference to our L<Dist::Zilla> overlord.
+
+I, for one, welcome our L<Dist::Zilla> overlord.
+
+=cut
+
 has zilla => (
     is              => 'ro',
     weak_ref        => 1,
@@ -18,6 +26,14 @@ has zilla => (
     required        => 1,
     isa_instance_of => 'Dist::Zilla',
 );
+
+=method register_component
+
+We wrap L<Dist::Zilla::Role::Stash/register_component> such that our L</zilla>
+attribute is populated when an instance of a class composed with us is
+created.
+
+=cut
 
 sub register_component {
     my ($class, $name, $arg, $section) = @_;
@@ -29,6 +45,8 @@ sub register_component {
 
 !!42;
 __END__
+
+=for :stopwords zilla
 
 =head1 SYNOPSIS
 
