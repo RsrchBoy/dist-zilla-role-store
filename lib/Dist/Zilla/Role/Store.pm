@@ -1,12 +1,29 @@
 package Dist::Zilla::Role::Store;
 
-# ABSTRACT: The great new Dist::Zilla::Role::Store!
+# ABSTRACT: A dynamic stash^Wstore of common data
 
-use Moose;
+use Moose::Role;
 use namespace::autoclean;
+use MooseX::AttributeShortcuts;
+
+with 'Dist::Zilla::Role::Stash';
+
+has zilla => (
+    is              => 'ro',
+    weaken          => 1,
+    init_arg        => '_zilla',
+    isa_instance_of => 'Dist::Zilla::Builder',
+);
+
+before register_component => sub {
+    my ($class, $name, $arg, $section) = @_;
+
+    # stash our 'zilla!
+    $arg->{_zilla} ||= $section->sequence->assembler->zilla;
+    return;
+};
 
 
-__PACKAGE__->meta->make_immutable;
 !!42;
 __END__
 
