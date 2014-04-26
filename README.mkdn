@@ -4,11 +4,27 @@ Dist::Zilla::Role::Store - A dynamic stash^Wstore of common data
 
 # VERSION
 
-This document describes version 0.000001 of Dist::Zilla::Role::Store - released April 25, 2014 as part of Dist-Zilla-Role-Store.
+This document describes version 0.000002 of Dist::Zilla::Role::Store - released April 26, 2014 as part of Dist-Zilla-Role-Store.
 
 # SYNOPSIS
 
 # DESCRIPTION
+
+# ATTRIBUTES
+
+## zilla
+
+A read-only attribute storing a reference to our [Dist::Zilla](https://metacpan.org/pod/Dist::Zilla) overlord.
+
+I, for one, welcome our [Dist::Zilla](https://metacpan.org/pod/Dist::Zilla) overlord.
+
+# METHODS
+
+## register\_component
+
+We wrap ["register\_component" in Dist::Zilla::Role::Stash](https://metacpan.org/pod/Dist::Zilla::Role::Stash#register_component) such that our ["zilla"](#zilla)
+attribute is populated when an instance of a class composed with us is
+created.
 
 # SOURCE
 
